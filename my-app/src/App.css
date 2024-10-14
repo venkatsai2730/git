@@ -1,0 +1,108 @@
+/* General reset to ensure cross-browser consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+  color: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scaling on hover */
+@keyframes smoothHover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+.App {
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f8f9 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  transform: scale(1);
+  animation: fadeIn 0.8s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.App:hover {
+  animation: smoothHover 0.3s forwards;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading styling */
+h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1.5rem;
+  color: #2f3640;
+  background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button styling */
+button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #0984e3;
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 7px 20px rgba(9, 132, 227, 0.4);
+}
+
+button:hover {
+  background-color: #74b9ff;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(116, 185, 255, 0.6);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 0.65rem 1.5rem;
+    font-size: 1rem;
+  }
+}
